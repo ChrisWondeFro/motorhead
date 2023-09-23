@@ -72,9 +72,9 @@ pub async fn handle_compaction(
         .query_async(&mut redis_conn)
         .await?;
 
-    let max_tokens = 4096usize;
-    let summary_max_tokens = 512usize;
-    let buffer_tokens = 230usize;
+    let max_tokens = 16000usize;
+    let summary_max_tokens = 1024usize;
+    let buffer_tokens = 460usize;
     let max_message_tokens = max_tokens - summary_max_tokens - buffer_tokens;
 
     let mut total_tokens = 0;
