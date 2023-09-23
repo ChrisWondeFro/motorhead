@@ -36,7 +36,7 @@ async fn main() -> io::Result<()> {
 
     let long_term_memory = env::var("MOTORHEAD_LONG_TERM_MEMORY")
         .map(|value| value.to_lowercase() == "true")
-        .unwrap_or(true);
+        .unwrap_or(false);
 
     if long_term_memory {
         // TODO: Make these configurable - for now just ADA support
