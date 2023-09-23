@@ -57,8 +57,8 @@ async fn main() -> io::Result<()> {
     let window_size = env::var("MOTORHEAD_MAX_WINDOW_SIZE")
         .ok()
         .and_then(|s| s.parse::<i64>().ok())
-        .unwrap_or(20);
-    let model = env::var("MOTORHEAD_MODEL").unwrap_or_else(|_| "gpt-3.5-turbo-16k".to_string());
+        .unwrap_or(12);
+    let model = env::var("MOTORHEAD_MODEL").unwrap_or_else(|_| "gpt-3.5-turbo".to_string());
 
     let session_cleanup = Arc::new(Mutex::new(HashMap::new()));
     let session_state = Arc::new(AppState {
